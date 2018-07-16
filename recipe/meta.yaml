@@ -1,27 +1,22 @@
-{%set name = "agate-dbf" %}
-{%set version = "0.2.0" %}
-{%set compress_type = "tar.gz" %}
-{%set hash_type = "sha256" %}
-{%set hash_val = "0666c1ad06cd4b2860351cebbd88bd4b05b2d1abd41b25cf91f8f6715035735e" %}
-{%set build_num = "0" %}
+{% set version = "0.2.0" %}
 
 package:
-  name: {{ name|lower }}
+  name: agate-dbf
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.{{ compress_type }}
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ compress_type }}
-  {{ hash_type }}: {{ hash_val }}
+  url: https://pypi.io/packages/source/a/agate-dbf/agate-dbf-{{ version }}.tar.gz
+  sha256: 0666c1ad06cd4b2860351cebbd88bd4b05b2d1abd41b25cf91f8f6715035735e
 
 build:
-  number: {{ build_num }}
-  script: python setup.py install --single-version-externally-managed --record=record.txt
+  number: 0
+  noarch: python
+  script: python -m pip install --no-deps --ignore-installed .
 
 requirements:
-  build:
+  host:
     - python
-    - setuptools
+    - pip
     - agate >=1.5.0
     - dbfread >=2.0.5
 
