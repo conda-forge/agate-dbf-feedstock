@@ -9,19 +9,19 @@ source:
   sha256: 00c93c498ec9a04cc587bf63dd7340e67e2541f0df4c9a7259d7cb3dd4ce372f
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: python -m pip install --no-deps --ignore-installed .
 
 requirements:
   host:
-    - python
+    - python >=3.6
     - pip
     - agate >=1.5.0
     - dbfread >=2.0.5
 
   run:
-    - python
+    - python >=3.6
     - agate >=1.5.0
     - dbfread >=2.0.5
 
@@ -41,3 +41,4 @@ about:
 extra:
   recipe-maintainers:
     - pmlandwehr
+    - jan-janssen
