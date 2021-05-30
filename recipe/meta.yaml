@@ -33,7 +33,7 @@ about:
   home: http://agate-dbf.readthedocs.org/
   license: MIT
   license_family: MIT
-  # license_file: COPYING - No manifest - see https://github.com/wireservice/agate-dbf/pull/3
+  license_file: COPYING
   summary: 'agate-dbf adds read support for dbf files to agate.'
   doc_url: http://agate-dbf.readthedocs.org/
   dev_url: https://github.com/wireservice/agate-dbf
