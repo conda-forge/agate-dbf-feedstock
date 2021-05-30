@@ -1,39 +1,44 @@
-{% set version = "0.2.1" %}
+{% set name = "agate-dbf" %}
+{% set version = "0.2.2" %}
 
 package:
-  name: agate-dbf
+  name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/a/agate-dbf/agate-dbf-{{ version }}.tar.gz
-  sha256: 00c93c498ec9a04cc587bf63dd7340e67e2541f0df4c9a7259d7cb3dd4ce372f
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: 589682b78c5c03f2dc8511e6e3edb659fb7336cd118e248896bb0b44c2f1917b
 
 build:
   number: 0
   noarch: python
-  script: python -m pip install --no-deps --ignore-installed .
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
-    - python
+    - python >=3.6
     - pip
     - agate >=1.5.0
     - dbfread >=2.0.5
 
   run:
-    - python
+    - python >=3.6
     - agate >=1.5.0
     - dbfread >=2.0.5
 
 test:
   imports:
     - agatedbf
+  commands:
+    - pip check
+  requires: 
+    - pip
 
 about:
   home: http://agate-dbf.readthedocs.org/
   license: MIT
   license_family: MIT
-  # license_file: COPYING - No manifest - see https://github.com/wireservice/agate-dbf/pull/3
+  license_file: COPYING
   summary: 'agate-dbf adds read support for dbf files to agate.'
   doc_url: http://agate-dbf.readthedocs.org/
   dev_url: https://github.com/wireservice/agate-dbf
@@ -41,3 +46,4 @@ about:
 extra:
   recipe-maintainers:
     - pmlandwehr
+    - jan-janssen
