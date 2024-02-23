@@ -1,5 +1,5 @@
 {% set name = "agate-dbf" %}
-{% set version = "0.2.2" %}
+{% set version = "0.2.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 589682b78c5c03f2dc8511e6e3edb659fb7336cd118e248896bb0b44c2f1917b
+  sha256: 98a2b53757136cc74dc297e59e2101d34f6d48f41f74156bb6c0de26bba2aa3f
 
 build:
   number: 0
@@ -31,7 +31,7 @@ test:
     - agatedbf
   commands:
     - pip check
-  requires: 
+  requires:
     - pip
 
 about:
