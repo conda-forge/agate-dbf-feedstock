@@ -20,7 +20,7 @@ requirements:
     - pip
     - agate >=1.5.0
     - dbfread >=2.0.5
-
+    - setuptools
   run:
     - python >={{ python_min }}
     - agate >=1.5.0
